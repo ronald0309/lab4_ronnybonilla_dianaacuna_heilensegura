@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tu.paquete">
+
+    <!-- Agrega los permisos de ubicación -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:label="lab4_ronnybonilla_dianaacuna_heilensegura"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- Agrega la siguiente línea para solicitar permisos en tiempo de ejecución -->
+            <meta-data
+                android:name="flutterEmbedding"
+                android:value="2" />
+
+            <!-- Otros elementos del archivo manifest -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Agrega esta actividad para solicitar permisos en tiempo de ejecución -->
+        <activity android:name="com.baseflow.permissionhandler.PermissionHandlerActivity" />
+
+    </application>
+</manifest>
